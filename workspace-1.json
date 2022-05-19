@@ -13,7 +13,7 @@
     "percent": 0.7,
     "swallows": [
        {
-        "class": "^Alacritty$"
+       "class": "^Alacritty$"
        }
     ],
     "type": "con"
@@ -39,7 +39,7 @@
             },
             "marks": [],
             "name": "~",
-            "percent": 0.6,
+            "percent": 0.5,
             "swallows": [
                {
                 "class": "^Alacritty$"
@@ -58,8 +58,8 @@
                "y": 0
             },
             "marks": [],
-            "name": "~",
-            "percent": 0.4,
+            "name": "gtop ~",
+            "percent": 0.5,
             "swallows": [
                {
                 "class": "^Alacritty$"
