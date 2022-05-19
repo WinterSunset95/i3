@@ -34,6 +34,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id flameshot
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id "feh --bg-fill ~/dotfs/wallpapers/ethan-hoover-eIVJAkj1uCs-unsplash.jpg"
+# restarting my original layout
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
