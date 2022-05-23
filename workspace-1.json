@@ -16,7 +16,7 @@
        "class": "^Alacritty$",
        // "instance": "^Alacritty$",
        // "machine": "^winterarch$",
-       // "title": "^1$"
+       "title": "^1$"
        }
     ],
     "type": "con"
@@ -49,7 +49,7 @@
                "class": "^Alacritty$",
                // "instance": "^Alacritty$",
                // "machine": "^winterarch$",
-               // "title": "^3$"
+               "title": "^2$"
                }
             ],
             "type": "con"
