@@ -9,23 +9,26 @@
        "y": 0
     },
     "marks": [],
-    "name": "i3-save-tree --works ~",
-    "percent": 0.7,
+    "name": "1",
+    "percent": 0.8,
     "swallows": [
        {
        "class": "^Alacritty$",
-       "title": "1"
+       // "instance": "^Alacritty$",
+       // "machine": "^winterarch$",
+       // "title": "^1$"
        }
     ],
     "type": "con"
 }
 
 {
+    // splitv split container with 1 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "splitv",
     "marks": [],
-    "percent": 0.3,
+    "percent": 0.2,
     "type": "con",
     "nodes": [
         {
@@ -39,33 +42,14 @@
                "y": 0
             },
             "marks": [],
-            "name": "~",
-            "percent": 0.5,
+            "name": "3",
+            "percent": 1,
             "swallows": [
                {
-                "class": "^Alacritty$",
-		"title": "2"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "pixel",
-            "current_border_width": 0,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 600,
-               "width": 800,
-               "x": 0,
-               "y": 0
-            },
-            "marks": [],
-            "name": "gtop ~",
-            "percent": 0.5,
-            "swallows": [
-               {
-                "class": "^Alacritty$",
-		"title": "3"
+               "class": "^Alacritty$",
+               // "instance": "^Alacritty$",
+               // "machine": "^winterarch$",
+               // "title": "^3$"
                }
             ],
             "type": "con"
