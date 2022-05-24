@@ -36,8 +36,8 @@ exec --no-startup-id xfce4-clipman
 exec --no-startup-id "feh --bg-fill ~/dotfs/wallpapers/815994.jpg"
 # restarting my original layout
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace 1; exec terminator --title 1 -e tmux'"
-exec --no-startup-id "i3-msg 'workspace 1; exec terminator --title 2 -e gtop'"
+exec --no-startup-id "i3-msg 'workspace 1; exec alacritty --title 1 -e tmux'"
+exec --no-startup-id "i3-msg 'workspace 1; exec alacritty --title 2 -e gtop'"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -57,7 +57,7 @@ set $right semicolon
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec terminator
+bindsym Mod4+Return exec alacritty
 
 # kill focused window
 bindsym Mod4+Shift+q kill
