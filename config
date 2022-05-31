@@ -199,6 +199,7 @@ mode "resize" {
 }
 # Opening google-chrome in sptcific workspace
 for_window [class="Google-chrome"] move to workspace $ws2
+for_window [class="Gvim"] floating enable
 # gaps
 for_window [class=".*"] border pixel 0
 gaps inner 8
