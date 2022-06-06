@@ -60,12 +60,14 @@ floating_modifier Mod4
 bindsym Mod4+Return exec alacritty
 
 # kill focused window
-bindsym Mod4+Shift+q kill
+bindsym Mod4+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+b exec brave
-bindsym Mod4+d exec --no-startup-id dmenu_run
-bindsym Mod4+Shift+f exec "rofi -modi filebrowser -show filebrowser"
+bindsym Mod4+b exec qutebrowser
+bindsym Mod4+d exec "rofi -modi drun -show drun"
+bindsym Mod4+p exec "rofi -modi run -show run"
+bindsym Mod4+o exec "rofi -modi filebrowser -show filebrowser"
+bindsym Mod4+i exec "rofi -modi window -show window"
 # A more modern dmenu replacement is rofi:
 # bindsym Mod4+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -200,6 +202,8 @@ mode "resize" {
 # Opening google-chrome in sptcific workspace
 for_window [class="Google-chrome"] move to workspace $ws2
 for_window [class="Gvim"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="feh"] resize set 500 500
 # gaps
 for_window [class=".*"] border pixel 0
 gaps inner 8
