@@ -33,7 +33,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id flameshot
 exec --no-startup-id xfce4-clipman
-exec --no-startup-id "feh --bg-fill ~/dotfs/wallpapers/815994.jpg"
+exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/make_you_smile.jpg"
 # restarting my original layout
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty --title 1 -e tmux'"
