@@ -230,7 +230,8 @@ bar {
 	status_command /home/autumn/Desktop/i3mine/i3mine
 	#status_command $HOME/Desktop/i3mine/target/release/i3mine
 	colors {
-		background #033041
+		background #1f1f1f
 		statusline #ffffff
+		focused_workspace #ffffff #5f5f5f
 	}
 }
