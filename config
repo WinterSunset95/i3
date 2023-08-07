@@ -53,10 +53,10 @@ tiling_drag modifier titlebar
 #exec --no-startup-id "polybar -r"
 
 # Switch between windows quickly
-bindsym $mod+Tab exec --no-startup-id "rofi -modi window,run -show window"
+#bindsym $mod+Tab exec --no-startup-id "rofi -modi window,run -show window"
 
 # Background
-exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/power.jpg"
+exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/tamaki2.jpg"
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -89,6 +89,10 @@ bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+# Cycle through windows in current workspace
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
 
 # change focus
 bindsym $mod+h focus left
@@ -138,7 +142,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -211,11 +215,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-mode "mine" {
+mode "mouse" {
+	bindsym $mod+j exec "xdotool mousemove_relative 0 10"
+	bindsym $mod+k exec "xdotool mousemove_relative 0 -10"
+	bindsym $mod+l exec "xdotool mousemove_relative 10 0"
+	bindsym $mod+h exec "xdotool mousemove_relative -- -10 0"
+	bindsym $mod+Return exec "xdotool click 1"
+	bindsym $mod+Ctrl+Return exec "xdotool click 3"
 	bindsym $mod+m mode "default"
 }
 
-bindsym $mod+m mode "mine"
+bindsym $mod+m mode "mouse"
 
 # i3 gaps
 for_window [class=".*"] border pixel 0
@@ -225,11 +235,11 @@ gaps bottom 0
 # Borders
 smart_borders on
 # class border background text indicator child_border
-client.focused          #cc0000 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #ffffff #222222 #ffffff #2e9ef4 #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e #222222
+client.urgent           #2f343a #900000 #ffffff #900000 #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
 client.background       #ffffff
 
@@ -239,7 +249,7 @@ bar {
 	tray_padding 1
 	mode dock
 	position top
-	status_command /home/autumn/Desktop/i3mine/i3mine
+	status_command ~/Desktop/i3mine/i3mine
 	#status_command $HOME/Desktop/i3mine/target/release/i3mine
 	colors {
 		background #1f1f1f
