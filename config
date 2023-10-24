@@ -54,9 +54,10 @@ tiling_drag modifier titlebar
 
 # Switch between windows quickly
 #bindsym $mod+Tab exec --no-startup-id "rofi -modi window,run -show window"
+bindsym $mod+Tab workspace back_and_forth
 
 # Background
-exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/tamaki2.jpg"
+exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/make_you_smile.jpg"
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -83,7 +84,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun -icon-theme 'Papirus' -show-icons"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -91,8 +92,8 @@ bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Cycle through windows in current workspace
-bindsym $mod+Tab focus right
-bindsym $mod+Shift+Tab focus left
+#bindsym $mod+Tab focus right
+#bindsym $mod+Shift+Tab focus left
 
 # change focus
 bindsym $mod+h focus left
