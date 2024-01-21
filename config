@@ -228,6 +228,12 @@ mode "mouse" {
 
 bindsym $mod+m mode "mouse"
 
+mode "handsfree" {
+	bindsym $mod+ctrl+h mode "default"
+}
+
+bindsym $mod+ctrl+h mode "handsfree"
+
 # i3 gaps
 for_window [class=".*"] border pixel 0
 gaps inner 4
