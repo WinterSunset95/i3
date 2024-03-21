@@ -57,7 +57,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Tab workspace back_and_forth
 
 # Background
-exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/make_you_smile.jpg"
+exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/be_awesome.jpg"
 
 # start a terminal
 bindsym $mod+Return exec alacritty
