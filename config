@@ -24,6 +24,9 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id conky
 exec --no-startup-id xcompmgr
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id ~/.config/polybar/polybar.sh
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -43,6 +46,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+bindsym $mod+Ctrl+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym $mod+Ctrl+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym $mod+Ctrl+M exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+Ctrl+Left exec --no-startup-id xbacklight -dec 10
+bindsym $mod+Ctrl+Right exec --no-startup-id xbacklight -inc 10
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -50,14 +59,13 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-#exec --no-startup-id "polybar -r"
 
 # Switch between windows quickly
 #bindsym $mod+Tab exec --no-startup-id "rofi -modi window,run -show window"
 bindsym $mod+Tab workspace back_and_forth
 
 # Background
-exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/be_awesome.jpg"
+exec --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/make_you_smile.jpg"
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -239,6 +247,10 @@ for_window [class=".*"] border pixel 0
 gaps inner 4
 gaps bottom 0
 
+# Window settings
+for_window [class="google-chrome"] move container to workspace $ws5
+for_window [class="nm-connection-editor"] floating enable
+
 # Borders
 smart_borders on
 # class border background text indicator child_border
@@ -252,15 +264,15 @@ client.background       #ffffff
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	tray_padding 1
-	mode dock
-	position top
-	status_command ~/Desktop/i3mine/i3mine
-	#status_command $HOME/Desktop/i3mine/target/release/i3mine
-	colors {
-		background #1f1f1f
-		statusline #ffffff
-		focused_workspace #5f5f5f #5f5f5f #ffffff
-	}
-}
+#bar {
+#	tray_padding 1
+#	mode dock
+#	position top
+#	#status_command ~/Desktop/i3mine/i3mine
+#	##status_command $HOME/Desktop/i3mine/target/release/i3mine
+#	#colors {
+#	#	background #1f1f1f
+#	#	statusline #ffffff
+#	#	focused_workspace #5f5f5f #5f5f5f #ffffff
+#	#}
+#}
