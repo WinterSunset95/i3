@@ -22,11 +22,11 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec_always --no-startup-id ~/.config/conky/conky.sh
+exec_always --no-startup-id ~/.config/conky/start.sh
 exec_always --no-startup-id ~/.config/picom/picom.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-exec_always --no-startup-id ~/.config/polybar/polybar.sh
+exec_always --no-startup-id ~/.config/polybar/start.sh
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -81,7 +81,7 @@ bindsym $mod+p exec "xfce4-screenshooter -m -f"
 bindsym $mod+Shift+p exec "xfce4-screenshooter -m -r"
 
 # Clipboard
-exec --no-startup-id xfce4-clipman
+exec --no-startup-id "xfce4-clipman"
 bindsym $mod+y exec "xfce4-popup-clipman"
 
 # kill focused window
