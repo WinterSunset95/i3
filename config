@@ -59,13 +59,15 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# Clipboard
+exec --no-startup-id "xfce4-clipman"
+bindsym $mod+y exec "xfce4-popup-clipman"
 
 # Switch between windows quickly
-#bindsym $mod+Tab exec --no-startup-id "rofi -modi window,run -show window"
 bindsym $mod+Tab workspace back_and_forth
 
 # Background
-exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/dojo.jpg"
+exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/doggo.jpg"
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -80,15 +82,8 @@ bindsym $mod+t exec "xfce4-taskmanager"
 bindsym $mod+p exec "xfce4-screenshooter -m -f"
 bindsym $mod+Shift+p exec "xfce4-screenshooter -m -r"
 
-# Clipboard
-exec --no-startup-id "xfce4-clipman"
-bindsym $mod+y exec "xfce4-popup-clipman"
-
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# Xfce panel
-#exec --no-startup-id xfce4-panel
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
@@ -249,6 +244,7 @@ gaps bottom 0
 
 # Window settings
 assign [class="Chromium-browser"] $ws5
+#assign [class="firefox"] $ws5
 for_window [class="Nm-connection-editor"] floating enable
 
 # Borders
