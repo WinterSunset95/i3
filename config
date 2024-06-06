@@ -27,6 +27,7 @@ exec_always --no-startup-id ~/.config/picom/picom.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec_always --no-startup-id ~/.config/polybar/start.sh
+exec_always --no-startup-id "xfce4-clipman"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -59,15 +60,14 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# Clipboard
-exec --no-startup-id "xfce4-clipman"
-bindsym $mod+y exec "xfce4-popup-clipman"
-
 # Switch between windows quickly
 bindsym $mod+Tab workspace back_and_forth
 
 # Background
-exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/doggo.jpg"
+exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/itachi_mirrored.jpg"
+
+# Clipboard
+bindsym $mod+y exec "xfce4-popup-clipman"
 
 # start a terminal
 bindsym $mod+Return exec alacritty
