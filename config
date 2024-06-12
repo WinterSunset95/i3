@@ -22,12 +22,11 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec_always --no-startup-id ~/.config/polybar/start.sh
+exec_always --no-startup-id "xfce4-clipman"
 exec_always --no-startup-id ~/.config/conky/start.sh
 exec_always --no-startup-id ~/.config/picom/picom.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-exec_always --no-startup-id ~/.config/polybar/start.sh
-exec_always --no-startup-id "xfce4-clipman"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -62,6 +61,9 @@ tiling_drag modifier titlebar
 
 # Switch between windows quickly
 bindsym $mod+Tab workspace back_and_forth
+
+# Magnifier
+bindsym $mod+Shift+m exec "kmag"
 
 # Background
 exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/itachi_mirrored.jpg"
@@ -246,6 +248,7 @@ gaps bottom 0
 assign [class="Chromium-browser"] $ws5
 #assign [class="firefox"] $ws5
 for_window [class="Nm-connection-editor"] floating enable
+for_window [class="kmag"] floating enable
 
 # Borders
 smart_borders on
