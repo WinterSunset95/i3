@@ -23,7 +23,7 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id ~/.config/polybar/start.sh
-exec_always --no-startup-id "xfce4-clipman"
+exec_always --no-startup-id "greenclip daemon"
 exec_always --no-startup-id ~/.config/conky/start.sh
 exec_always --no-startup-id ~/.config/picom/picom.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -69,7 +69,8 @@ bindsym $mod+Shift+m exec "kmag"
 exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/itachi_mirrored.jpg"
 
 # Clipboard
-bindsym $mod+y exec "xfce4-popup-clipman"
+#bindsym $mod+y exec "xfce4-popup-clipman"
+bindsym $mod+y exec "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -80,9 +81,11 @@ bindsym $mod+b exec firefox
 # Task manager
 bindsym $mod+t exec "xfce4-taskmanager"
 
-# Screenshot
-bindsym $mod+p exec "xfce4-screenshooter -m -f"
-bindsym $mod+Shift+p exec "xfce4-screenshooter -m -r"
+# Screenshot to file with flameshot
+#bindsym $mod+p exec "xfce4-screenshooter -m -f"
+#bindsym $mod+Shift+p exec "xfce4-screenshooter -m -r"
+bindsym $mod+p exec "flameshot full"
+bindsym $mod+Shift+p exec "flameshot gui --clipboard"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -123,6 +126,10 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # split in horizontal orientation
 bindsym $mod+g split h
