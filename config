@@ -23,8 +23,9 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id ~/.config/polybar/start.sh
+#exec_always --no-startup-id eww-x open-many barx11 audioWindow helpersWindow
 exec_always --no-startup-id "greenclip daemon"
-exec_always --no-startup-id ~/.config/conky/start.sh
+#exec_always --no-startup-id ~/.config/conky/start.sh
 exec_always --no-startup-id ~/.config/picom/picom.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -52,6 +53,12 @@ bindsym $mod+Ctrl+M exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ togg
 bindsym $mod+Ctrl+Left exec --no-startup-id xbacklight -dec 5
 bindsym $mod+Ctrl+Right exec --no-startup-id xbacklight -inc 5
 
+# Rotate screen
+bindsym $mod+Ctrl+M+Right exec "xrandr --output eDP1 --rotate right"
+bindsym $mod+Ctrl+M+Left exec "xrandr --output eDP1 --rotate left"
+bindsym $mod+Ctrl+M+Up exec "xrandr --output eDP1 --rotate normal"
+bindsym $mod+Ctrl+M+Down exec "xrandr --output eDP1 --rotate inverted"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -66,7 +73,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+m exec "kmag"
 
 # Background
-exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/ethan-hoover-eIVJAkj1uCs-unsplash.jpg"
+exec_always --no-startup-id "feh --bg-fill ~/.config/i3/wallpapers/hayati.jpeg"
 
 # Clipboard
 #bindsym $mod+y exec "xfce4-popup-clipman"
