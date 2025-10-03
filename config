@@ -22,10 +22,10 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec_always --no-startup-id ~/.config/polybar/start.sh
+ exec_always --no-startup-id ~/.config/polybar/start.sh
 #exec_always --no-startup-id eww-x open-many barx11 audioWindow helpersWindow
 exec_always --no-startup-id "greenclip daemon"
-#exec_always --no-startup-id ~/.config/conky/start.sh
+exec_always --no-startup-id ~/.config/conky/start.sh
 exec_always --no-startup-id ~/.config/picom/picom.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
